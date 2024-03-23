@@ -1,0 +1,17 @@
+========================================================Einführung===============================================
+
+Eigenschaften von JAVA:
+	Einfachheit: Syntax/Konzepte wie andere Sprachen (keine Makros/Operatorenüberladung/Mehrfachvererbung)
+	Speicherverwaltung: Garbage Collector als Threat(Obj. wird weggeworfen wenn nicht mehr referenziert)
+		+ keine Speicerlöcher, reduzierte programmkomplexität, einfach lesbarer Quellcode
+		- GC braucht Resourcen, keine explizite Freigabe, Aufräumzeitpunkt nicht def.
+	Referenzen (statt Zeiger): Person p = new Person("Name");
+		beinhaltet Speicheradresse + Typinformation
+		+ Typprüfung, Verschiebung in Speicher möglich, Zugriffsprüfung
+		- aufwendigeres Dereferenzieren
+	Bytecode von Java-Compiler javac "Instruktionen für virtuelle Java-Maschine"
+	Laufzeitumgebung "Java Virtual Machine"
+		class loader <-> Memory(Meth.area, heap, J.Stacks, PC.Registers, Nat.Meth.Stacks) <-> Exec-Engine <-> Nat.Interface <-> OS
+	Plattformunabhängigkeit: JRE interpretiert (plattformunabh.)Bytecode in JVM, Aufrufweitergabe an OS
+	Performance: Bytecode <-> JRE <-interpretation-> JVM
+		Interpretation:
