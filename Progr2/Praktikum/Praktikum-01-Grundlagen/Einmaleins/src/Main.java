@@ -1,18 +1,27 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Wieviele Aufgaben wollen sie rechnen");
+        int aufgabenzahl = 0;
+        boolean correctinput = false;
+
+        System.out.print("Wieviele Aufgaben wollen sie rechnen\n");
         
         //einlesen der Aufgabenanzahl, überprüfen der korrektheit der Eingabe
-        int aufgabenzahl = scan.nextInt();
-        if(aufgabenzahl!=(int)aufgabenzahl || aufgabenzahl>20){
-            System.out.println("Bitte geben sie eine positive Ganzzahl kleiner 20 ein!");
-            return;
-        }
+        do{
+            try{
+                aufgabenzahl = scan.nextInt();
+                correctinput = true;
+            } catch(InputMismatchException IME){
+                System.out.println("Bitte geben sie eine positive Ganzzahl ein!");
+                scan.nextLine();
+            }
+        }while(!correctinput);
 
         //erstellen der Aufgaben
         int geloesteaufgzahl = 0;
