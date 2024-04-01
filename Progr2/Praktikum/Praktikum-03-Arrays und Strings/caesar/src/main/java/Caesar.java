@@ -6,12 +6,54 @@ public class Caesar{
   public final static String EXAMPLE_KEY = "HAMNOGPQFEISTLJVWDXKCYZRBU";
 
   public static String applyCaesar(String text, String key, String clear){
-    // TODO
-    return text;
+    StringBuilder encryptedString = new StringBuilder(text.length());
+    //iterate over the inputed text
+    for(int i=0; i<text.length(); i++){
+      char c = text.charAt(i);
+
+      //check if the key contains the char at the current index from the inputed text
+      if(key.contains(String.valueOf(c))){
+        int indexOfString = clear.indexOf(String.valueOf(c));
+        encryptedString.append(key.substring(indexOfString, indexOfString+1));  //append the key Character at the index of the Text Character to the encoded String
+      }
+      //if the key doesnt contain the sign append it to the output text
+      else{
+        encryptedString.append(String.valueOf(c));
+      }
+    }
+    return encryptedString.toString();
   }
 
+
   public static void printStatistics(String text){
-    // TODO
+    //Relative Häufigkeit: absoluteHäufigkeit/Anzahlallerzeichen
+    int stringLength = text.length();
+    String completedLetters = new String();
+    //create counter Array with numbers of Char occurance at the position in the alphabet and initialize with 0
+    int[] numberofoccurance = new int[ABC.length()];
+    for(int i=0; i<ABC.length(); i++){
+      numberofoccurance[i]=0;
+    }
+
+    //iterate over all letters in the text
+    for(int i=0; i<stringLength; i++){
+      char c = text.charAt(i);
+      //check if char at the index has already been counted
+      if(completedLetters.contains(String.valueOf(c)) || !(ABC.contains(String.valueOf(c)))){
+        continue;
+      }
+      //if the char at the index has not been counted add it to the list and increase occurance counter
+      else{
+        completedLetters+=(String.valueOf(c));
+        ++numberofoccurance[ABC.indexOf(String.valueOf(c))];
+      }
+    }
+
+    //Output of the Occurance message
+    for(int i=0; i<ABC.length(); i++){
+      System.out.println(ABC.substring(i, i+1) +" "+ ((float)numberofoccurance[i]/(float)stringLength) +  " %");
+    }
+
   }
 
   public static void main(String[] args){
@@ -20,9 +62,9 @@ public class Caesar{
     String encrypted = applyCaesar(message, EXAMPLE_KEY, ABC);
     String decrypted = applyCaesar(encrypted, ABC, EXAMPLE_KEY);
 
-    System.out.printf("Message: %s%n", message);
-    System.out.printf("Encrypted: %s%n", encrypted);
-    System.out.printf("Decrypted: %s%n", decrypted);
+    System.out.printf("Message: %s%n%n", message);
+    System.out.printf("Encrypted: %s%n%n", encrypted);
+    System.out.printf("Decrypted: %s%n%n", decrypted);
 
     printStatistics(encrypted);
   }

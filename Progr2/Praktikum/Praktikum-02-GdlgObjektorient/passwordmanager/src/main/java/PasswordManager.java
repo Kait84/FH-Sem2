@@ -5,7 +5,6 @@ public class PasswordManager {
 
   private static void addExampleEntries(PasswordStore store){
 
-
   }
 
   private static void addPasswordEntry(PasswordStore store, String website, 
