@@ -6,25 +6,32 @@ public class  MonteCarloIntegration {
     public static void main(String[] args) {
         //deklaration, initialisieren der benötigten Werte
         int allPoints = 0, pointsUnderCurve = 0, iterations = 1;
-        double x, y, approxInt;
+        double x, y, changeRationBefore, approxInt = 1;
 
-        //Ausführschleife des Programms
-        do{     //läuft solange die maximale Iterationsannzahl nicht erreicht ist und die Annäherung des Integrals größer ist als die minimale Annäherungsrate
+        //Ausführschleife des Programms: läuft solange die maximale Iterationsannzahl nicht erreicht ist und
+        // die Annäherung des Integrals größer ist als die minimale Annäherungsrate
+        do{
+            //Erhöhung der Iterationszahl, der allgemeinen Punktzahl, Zwischenspeichern der letzten Änderungsrate und
+            // Erstellen zweier Punke x,y zwischen [0,1]
+            ++iterations;
             x = Math.random();
             y = Math.random();
-            allPoints++;
-            if(y<function(x)){             //Erhöhung der Zahl der Punkte unter der Kurve wenn der y-Wert kleiner gleich dem Funktionswert von x ist
+            ++allPoints;
+            changeRationBefore = approxInt;
+
+            //Erhöhung der Zahl der Punkte unter der Kurve wenn der y-Wert kleiner gleich dem Funktionswert von x ist und Ausgabe der Werte
+            if(y<=function(x)){
                 pointsUnderCurve++;
+                //berechnen der Annäherung des Integrals
+                approxInt = ((double)pointsUnderCurve/(double)allPoints);
+                //Ausgabe der Iterationzahl, Änderungsrate und der Veränderung dieser zu der vorhereigen
+                System.out.printf("Iteration %d: %.5f (%f) %n", iterations, approxInt, Math.abs(changeRationBefore - approxInt));
             }
 
-            approxInt = (pointsUnderCurve/allPoints);     //berechnen der Annäherung des Integrals
-            System.out.printf("Iteration %d: %.5f", iterations, approxInt);
-
-            iterations++;                               //Erhöhung der Iterationszahl
         }while(iterations<MAX_ITERATIONS && Math.abs(approxInt)>=MIN_CHANGE);
     }
 
     public static double function(double x){
-        return Math.sin(Math.PI)*x;
+        return Math.sin((Math.PI)*x);
     }
 }
