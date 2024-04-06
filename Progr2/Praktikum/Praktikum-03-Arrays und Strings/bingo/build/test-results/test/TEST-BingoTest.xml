@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="BingoTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-04-04T23:32:24" hostname="DESKTOP-28F0G7I" time="0.005">
+  <properties/>
+  <testcase name="testBingoExample" classname="BingoTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

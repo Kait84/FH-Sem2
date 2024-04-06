@@ -1,0 +1,66 @@
+------------------------------------Reguläre Sprachen----------------------------------
+Formale Sprache: 
+	Endl.Alphabet Σ = {...,...}
+	Endl.Wort über Alphabet w = s1s2s3... [si∈Σ]
+	Menge aller Worte über Alphabet Σ*
+
+Sprache: Teilmenge L ⊆ Σ* über einem endl.Alphabet Σ
+
+Sprachklasse: Menge von Sprachen (Mächtigkeit/Maschinenmodell/Beschreibung/Komplexität...)
+
+Alphabet -konkat-> Wort -auswahl-> Sprache -auswahl-> Sprachklasse
+
+Konkatenation u·v: assoziativ (nicht kommutativ)
+Neutrales Element ε
+Längenlexikographische Ordnung: 1.Länge, 2.alphabetisch
+
+einfache Sprache(beschreibung/erkennung): Endl.Sprachen, Einfache Struktur
+
+
+Reguläre Mengen (Reg.Sprachen REG)
+▶Vereinigung: L1 ∪ L2 ∈ REG
+▶Konkatenation: L1· L2 ∈ REG
+▶Kleene-Stern: L∗ ∈ REG
+
+Regulärer Ausdr.(REX) α beschreibt reguläre Sprache L(α),
+Sprache ist regulär, wenn es reg.Ausdr. gibt der sie beschreibt
+L(∅) = ∅ / L(ε) = {ε} / ∀a∈Σ : L(a) = {a}
+▶Alternative: (α+β)/(α|β) ist reg. Ausdr mit L(α+β) = L(α)∪L(β)
+▶ Konkatenation: (α·β)/(αβ) ist reg.
+Ausdruck mit L(αβ) = L(α)◦L(β)
+▶ Kleene-Stern: (α∗) ist reg. Ausdruck mit L(α∗) = L(α)∗
+[Prio von unten nach oben]
+
+-----------------REG----REX---
+Leere Sprache |	 ∅		∅	 |
+Leeres Wort   |  {ε}	ε	 |
+Symbol 		  |	 {a} 	a 	 |
+Vereinigung   |  A∪B	a+b  |
+Konkatenation |  A·B 	a·b  |
+Kleene-Stern  |	 A*		a*	 |
+
+--------------------------------------------------------------------
+
+Endliche Automaten M: 5-Tupel akzeptiert Worte, wenn δ von q0 in einen Endzustand führt
+(es gibt Zustände qn mit δ(q0, a1)=q1,..., δ(qn-1, an)=qn [qn∈F])
+
+M = (Q, Σ, δ, q0, F)
+Q: Zustandsmenge[endlich]
+Σ: Eingabealphabet
+δ: Übergangsfunktion Q×Σ→Q [partiell]
+0∈Q: Startzustand
+F⊆Q: Endzustandsmenge
+
+L(M): Menge d.von M akzeptierten Worte/von M akzeptierte Sprache
+Konfiguration: Tupel (q, y) [M in Zustand q, muss Teilwort y lesen]
+Berechnungspfad: Folge von Konfigurationen (q0, w1w2...wn) |- (q1, w2..wn) |- (qn, ε)
+
+Speicher:Zustände[konstant]
+DFA heißt vollständig, wenn δ(q, a)̸!=⊥ für alle q∈Q, a∈Σ
+
+DFA/DEA gleichmächtig wie NFA/NEA[δ: Q×Σ→2^Q]
+Sprachklassen: DFA-Sprachen ⊆ NFA-Sprachen
+DFA= δ: Q×Σ→Q	| Berechnungspfad 	| w∈L(M): BerPf akzeptierend | w!∈L(M): BerPf verwerfend
+NFA= δ: Q×Σ→2^Q | Berechnunfsbaum 	| w∈L(M): ∃ akzept. BerPf 	 | ∀ BerPf verwerfend
+
+--56

@@ -9,7 +9,7 @@ import org.junit.*;
 public class BingoTest {
 
 
-  /*
+/*
   @Test
   public void testBingoExample(){
     assertNotNull("BINGO_EXAMPLE must not be null", Bingo.BINGO_EXAMPLE);
@@ -46,7 +46,7 @@ public class BingoTest {
     assertEquals("expected 48 at Bingo.BINGO_EXAMPLE[4][3]", 48, Bingo.BINGO_EXAMPLE[4][3]);
     assertEquals("expected 67 at Bingo.BINGO_EXAMPLE[4][4]", 67, Bingo.BINGO_EXAMPLE[4][4]);
 
-  }*/
+  } */
 
   /*@Test
   public void testContainsDuplicates(){
