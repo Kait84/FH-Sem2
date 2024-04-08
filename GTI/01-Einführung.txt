@@ -19,4 +19,12 @@ Automatentheorie:
 	-Neuronales Netz: Neuronennetz, Eingaben verändern internen Status
 	Ausgabe = Einfabe für andere Neuronen
 
-Berechenbarkeit:
+Berechenbarkeit: gibt es Alg. der für jede math.Aussage entscheiet ob wahr/falsch: NEIN
+	Gibt es turingmaschine, die für beliebige M feststellen kann ob M auf Eingabe terminiert
+
+Komplexitätstheorie: Zeitkomplexität/Speicherkomplexität
+	obere Schranke: Algorithmen , untere Schranke: Beweise [nicht/deterministisch]
+
+Graphentheorie: [Graph:Knotenmenge V, Kantenmenge E] mit Graphen: Probleme modellieren
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

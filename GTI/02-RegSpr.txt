@@ -59,6 +59,7 @@ Speicher:Zustände[konstant]
 DFA heißt vollständig, wenn δ(q, a)̸!=⊥ für alle q∈Q, a∈Σ
 
 DFA/DEA gleichmächtig wie NFA/NEA[δ: Q×Σ→2^Q]
+Zu jedem NFA M exitiert ein DFA M' mit L(M) = L(M')
 Sprachklassen: DFA-Sprachen ⊆ NFA-Sprachen
 DFA= δ: Q×Σ→Q	| Berechnungspfad 	| w∈L(M): BerPf akzeptierend | w!∈L(M): BerPf verwerfend
 NFA= δ: Q×Σ→2^Q | Berechnunfsbaum 	| w∈L(M): ∃ akzept. BerPf 	 | ∀ BerPf verwerfend
