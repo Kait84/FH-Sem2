@@ -1,0 +1,48 @@
+---------------------------------------Grundlagen---------------------------------------
+
+Software: Computer Programme/Prozeduren/Dokumentationen/Daten für die Verwendung eines Computersystems
+
+Engineering: Anwendung eines systematischen/disziplinierten/quantifizierbaren Ansatzes für Strukturen/Maschinen/Produkte/Systeme/Prozesse
+
+Software-Engineering: Systematische Anwendung vom wissenschaftlichem/technologischem Wissen/Methoden/Erfahrung(SW-Design,-Tests,-Implementation,-Dokumentation) 
+
+Entscheidungsschwellen(Decision Gates):
+	fundamentale Ereignisse im Rahmen des LZ einer SW zur Entscheidung über Fortführung d.Projekts
+	-Akzeptiert: Fortführen d.Proj.
+	-Akzeptabel mit Auflagen: Fortführung d.Proj + Durchführen d.Maßnahmen
+	-Unakzeptabel: keine FF / Rückkehr in vorherige Pase / Unterbrechen
+	-Unrettbar: Abbrechen d.Proj.
+
+Lebenszyklus / LZ: 
+	besitzt jede SW(auch wenn nicht formal def.)
+	variieren: Art/Zweck/Nutzung/Rahmenbedingungen d.SW
+	anpassung d.Prozesse je Lebenszyklusphase
+SW-Engineer: gesamter Lebenszyklus, SW-Engineering: Anfang d.Lebenszyklus
+
+Lebenszyklusmodelle:
+aus: Phasen(Zweck), Entscheidungsschwellen(Kriterien), zeitl.Ablauf
+dienen: Reifegradsteuerung, Business/Budgetsteuerung, Identifikation:Stakeholder/Bedarfen/Anforderungen, Transparenz:Management, Planung/Identifikation:Unterstützungssysteme, SW-Auslegung
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Lebenszyklusphasen: (-Aktivitäten, +Ergebnisse)
+Konzept -> Entwicklung -> Bereitstellung -> Nutzung -> Erhaltung -> Stillegung
+
+	1.Konzept [Concept]
+		- Planung, Bedarfserhebung, Anforderungerhebung, Analysen(Markt/Machbarkeit/Kosten/Risiken...)
+		+ Umsetzbares Konzept(Bedarf/Anforderung/Architektur), "Lastenheft", Planungsdokumente
+	2.Entwicklung [Development]
+		- Anforderungserhebung, SW-Design, Implementierung, Integration, Verifikation/Validierung, Zulieferungsmanagement
+		+ Nutzbare SW, Nutzer Dokumentation, Datenmigration
+	3.Bereitstellung [Deployment]
+		- Installation, Inbetriebnahme, Nutzerschulung, Supportaufbau, Abnahme
+		+ SW/Service im Einsatz, Nutzdaten
+	4.1 Nutzung [Operation]
+		- SW-Betrieb, Nutzdokumentation, Kundenzufriedenheitsmanagement, Nutzerschulung
+		+ Betriebsergebnis, Betriebsbericht, Nutzdaten, Qualitätsbericht
+	4.2 Erhaltung [Support]
+		- Wartung, Fehlerbehebung(Ursachenanalyse)
+		+ Erhaltungsbericht, Aktualisierte SW
+	5.Stillegung [Disposal]
+		- Datensicherung, Deinstallation, Lessons learned
+		+ Archivierte Daten/SW
