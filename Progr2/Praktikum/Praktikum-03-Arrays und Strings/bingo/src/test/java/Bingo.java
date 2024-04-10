@@ -58,10 +58,29 @@ public class Bingo {
         for(int i=0; i<5; i++){
             if(bingoCard[i] == null){
                 throw new IllegalArgumentException("Eine Zeile ist null!");
+                break;
             }
         }
-        //check if array is 2D Square array 5x5
-        /////////////////////Additional/////////////////
+        //TOOOOOOODOOOOOOOOOOO: check if array is 2D Square array 5x5
+        for(int i=0; i<5; i++){
+                if(bingoCard.length != 5 || bingoCard[i].length != 5 ){
+                    throw new IllegalArgumentException("Die Arraygröße beträgt nicht 5x5!");
+                    break;
+                }
+                if(!bingoCard.getClass().isArray()){
+                    throw new IllegalArgumentException("Die Karte ist kein Array!");
+                    break;
+                }
+                /*
+                if(bingoCard[0][0].length != 0){
+                    throw new IllegalArgumentException("Das Array ist nicht zweidimensional!");
+                }
+
+                 */
+
+        }
+
+        /////////////////////Additional/////////////////////
         //check if number in center is zero
         if(bingoCard[2][2] != 0){
             throw new IllegalArgumentException("Der mittlere Eintrag ist nicht gestrichen!");
@@ -70,14 +89,42 @@ public class Bingo {
         for(int i=0; i<5; i++){
             if(bingoCard[0][i] < 1 || bingoCard[0][i] > 15){
                 throw new IllegalArgumentException("Die erste Zeile enthält Werte kleiner 1 oder Größer 15!");
+                break;
             }
         }
         //check if 2.row contains numbers between 16-30
         for(int i=0; i<5; i++){
             if(bingoCard[1][i] < 16 || bingoCard[1][i] > 30){
                 throw new IllegalArgumentException("Die zweite Zeile enthält Werte kleiner 16 oder Größer 30!");
+                break;
             }
         }
+        //check if 3.row contains numbers between 31-45
+        for(int i=0; i<5; i++){
+            if(bingoCard[3][i] < 31 || bingoCard[3][i] > 45){
+                throw new IllegalArgumentException("Die dritte Zeile enthält Werte kleiner 31 oder Größer 45!");
+                break;
+            }
+        }
+        //check if 4.row contains numbers between 46-60
+        for(int i=0; i<5; i++){
+            if(bingoCard[3][i] < 46 || bingoCard[3][i] > 60){
+                throw new IllegalArgumentException("Die vierte Zeile enthält Werte kleiner 46 oder Größer 60!");
+                break;
+            }
+        }
+        //check if 5.row contains numbers between 61-75
+        for(int i=0; i<5; i++){
+            if(bingoCard[4][i] < 61 || bingoCard[4][i] > 75){
+                throw new IllegalArgumentException("Die vierte Zeile enthält Werte kleiner 61 oder Größer 75!");
+                break;
+            }
+        }
+        //check if contains duplicates
+        if(containsDuplicates(bingoCard)){
+            throw new IllegalArgumentException("Die Karte enthält Duplikate!");
+        }
+
 
     }
 

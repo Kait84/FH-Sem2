@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="BingoTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2024-04-10T15:29:31" hostname="DESKTOP-28F0G7I" time="0.005">
+<testsuite name="BingoTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2024-04-10T20:16:45" hostname="DESKTOP-28F0G7I" time="0.014">
   <properties/>
-  <testcase name="testCheckBingoCard" classname="BingoTest" time="0.005">
+  <testcase name="testCheckBingoCard" classname="BingoTest" time="0.014">
     <failure message="java.lang.AssertionError: no rows not allowed: unexpected exception type thrown; expected:&lt;java.lang.IllegalArgumentException&gt; but was:&lt;java.lang.ArrayIndexOutOfBoundsException&gt;" type="java.lang.AssertionError">java.lang.AssertionError: no rows not allowed: unexpected exception type thrown; expected:&lt;java.lang.IllegalArgumentException&gt; but was:&lt;java.lang.ArrayIndexOutOfBoundsException&gt;
 	at org.junit.Assert.assertThrows(Assert.java:1020)
 	at BingoTest.testCheckBingoCard(BingoTest.java:77)
