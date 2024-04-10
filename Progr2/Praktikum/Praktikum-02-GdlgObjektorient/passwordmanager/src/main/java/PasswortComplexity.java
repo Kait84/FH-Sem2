@@ -1,5 +1,5 @@
 public class PasswortComplexity {
-    public Pwd_Complexity{
+
         enum complexity {
             PIN,
             SIMPLE,
@@ -8,6 +8,4 @@ public class PasswortComplexity {
             SUPER_Complex
         }
 
-
-    }
 }

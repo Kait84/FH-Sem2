@@ -48,7 +48,8 @@ public class BingoTest {
 
   } */
 
-  /*@Test
+  /*
+  @Test
   public void testContainsDuplicates(){
 
     assertFalse("must return false on bingo card without duplicats",
@@ -64,9 +65,9 @@ public class BingoTest {
         Bingo.containsDuplicates(example));
 
 
-  }*/
+  } */
 
-  /*@Test
+  @Test
   public void testCheckBingoCard(){
 
     assertThrows("null not allowed",
@@ -163,7 +164,7 @@ public class BingoTest {
         IllegalArgumentException.class,
         () -> Bingo.checkBingoCard(example));
     example[0][4] = 73;
-  }*/
+  }
 
   /*@Test
   public void testFillBingoCard(){
