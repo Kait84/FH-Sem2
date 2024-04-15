@@ -4,7 +4,11 @@ public class PasswordComplexity {
 
     //enum PasswordComplexity, die alle Values mit jeweiligen Werten enthält
     public enum values {
-        PIN("0"), SIMPLE("aA"), MEDIUM("aA0"), COMPLEX("aA0!"), SUPER_COMPLEX("aA!");
+        PIN( 4, "0", Ziffern),
+        IMPLE( 5, "aA", Kleinbuchst+Grossbuchst),
+        MEDIUM( 8, "aA0", Kleinbuchst+Grossbuchst+Ziffern),
+        COMPLEX( 10, "aA0!", Kleinbuchst+Grossbuchst+Ziffern+Sonderz),
+        SUPER_COMPLEX( 16, "aA!", Kleinbuchst+Grossbuchst+Ziffern+Sonderz);
 
         //Strings aus allen verwendbaren Zeichen
         final String Ziffern = "0123456789";
@@ -15,29 +19,10 @@ public class PasswordComplexity {
         int length;
         String chars, usableChars;
 
-        PIN() {
-            this.length = 4;
-            this.usableChars = Ziffern;
-        }
-
-        SIMPLE() {
-            this.length = 5;
-            this.usableChars = Kleinbuchst + Grossbuchst;
-        }
-
-        MEDIUM {
-            this.length = 8;
-            this.usableChars = Ziffern + Kleinbuchst + Grossbuchst;
-        }
-
-        COMPLEX {
-            this.length = 10;
-            this.usableChars = Ziffern + Kleinbuchst + Grossbuchst + Sonderz;
-        }
-
-        SUPER_COMPLEX {
-            this.length = 16;
-            this.usableChars = Ziffern + Kleinbuchst + Grossbuchst + Sonderz;
+        private values(int length, String chars, string usableChars) {
+            this.length = length;
+            this.chars = chars
+            this.usableChars = usableChars;
         }
 
         public int getLength() {
@@ -51,19 +36,10 @@ public class PasswordComplexity {
         public String generatePassword() {
             final Random rndm = new Random();
             final StringBuilder password = new StringBuilder();
-            if (chars.equals("0")) {
-                usableChars = Ziffern;
-            } else if (chars.equals("aA")) {
-                usableChars = Kleinbuchst + Grossbuchst;
-            } else if (chars.equals("aA0")) {
-                usableChars = Kleinbuchst + Grossbuchst + Ziffern;
-            } else if (chars.equals("aA0!")) {
-                usableChars = Kleinbuchst + Grossbuchst + Ziffern;
-            }
 
             for (int i = 0; i < length; i++) {
                 //append a random char from the usable char String to password
-                password.append(chars.charAt(rndm.nextInt(0, chars.length())));
+                password.append(this.usableChars.charAt(rndm.nextInt(0, this.usableChars.length())));
             }
             return (password.toString());
         }
