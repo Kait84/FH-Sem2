@@ -10,7 +10,7 @@ public class Flaechenberechner {
                 //Ausrechnen, Zurückgeben des Kugelvolumens
                 try{
                     double radius = Double.parseDouble(args[0]);
-                    System.out.printf("Kugelvolumen: %.6f", (4 / 3 * Math.PI * radius * radius * radius));
+                    System.out.printf("Kugelvolumen: %.6f", ((4/3d * Math.PI) * (radius * radius * radius)));
                 }catch(Exception nad){
                     System.err.println("Ein angegebenes Argument ist von einem ungültigen Typen");
                 }

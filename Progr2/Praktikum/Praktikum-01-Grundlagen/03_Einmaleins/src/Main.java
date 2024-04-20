@@ -9,6 +9,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
+    //Erstellen des Scanners und der Variablen
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int aufgabenzahl = 0;
@@ -47,7 +48,7 @@ public class Main {
         int anteilrichtigerlsg = (int)(((double)geloesteaufgzahl/(double)aufgabenzahl)*100);
         System.out.println("\n"+geloesteaufgzahl + " von " + aufgabenzahl +" Aufgaben sind korrekt (" + anteilrichtigerlsg + "%)");
 
-        //Ausgabe eines vom Prozentsatz abhängigen Motivationsspruchs
+        //Ausgabe eines vom Prozentsatz abhängigen Motivationsspruchs, Schließen des Scanners
         if(anteilrichtigerlsg>99){
             System.out.println("Brilliant gelöst!");
             return;
