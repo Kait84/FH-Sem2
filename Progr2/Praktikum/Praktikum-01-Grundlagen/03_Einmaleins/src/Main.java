@@ -1,15 +1,16 @@
-/**
- * Abfrage des kleinen Ein Mal Eins mit Prozentsatz der gelösten aufgaben und einem Motivationsspruch,
- * der abhängig davon ist. Scant nach der Zahl der zu rechnenden Aufgaben und stellt random generierte
- * Mathe aufgaben aus dem kleinen Ein Mal Eins
- */
-
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
-    //Erstellen des Scanners und der Variablen
+    /**
+     * @author Lukas Preitenwieser
+     * @param args
+     * Abfrage des kleinen Ein Mal Eins mit Prozentsatz der gelösten aufgaben und einem Motivationsspruch,
+     * der abhängig davon ist.
+     * Einlesen der Zahl der zu rechnenden Aufgaben und stellen random generierter
+     * Mathe Aufgaben aus dem kleinen Ein Mal Eins
+     */
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int aufgabenzahl = 0;
@@ -31,11 +32,24 @@ public class Main {
         //erstellen der Aufgaben
         int geloesteaufgzahl = 0;
         for(int i = 0; i<aufgabenzahl; i++){
-            int x = (int)(Math.random()*10);                /*Anpassen der Random Funktion*/
-            int y = (int)(Math.random()*10);                   /*zum Ausgaben eines Int */
-            System.out.println("Was ist " + x + " * " + y + "?");
-            //Einlesen und überprüfen der Lösung
-            int erg = scan.nextInt();
+            /*Anpassen der Random Funktion zum Ausgeben eines Integers*/
+            int x = (int)(Math.random()*10);
+            int y = (int)(Math.random()*10);
+
+            //Einlesen und überprüfen der Lösung, überprüfen auf Korrektheit der Eingabe
+            correctinput = false;
+            int erg = 0;
+            do{
+                try{
+                    System.out.println("Was ist " + x + " * " + y + "?");
+                    erg = scan.nextInt();
+                    correctinput = true;
+                }catch(InputMismatchException IME){
+                    System.out.println("Bitte geben sie eine positive Ganzzahl ein!");
+                    scan.nextLine();
+                }
+            }while(!correctinput);
+
             if (erg == x * y) {
                 geloesteaufgzahl++;
                 System.out.println("Richtig!");
@@ -48,7 +62,7 @@ public class Main {
         int anteilrichtigerlsg = (int)(((double)geloesteaufgzahl/(double)aufgabenzahl)*100);
         System.out.println("\n"+geloesteaufgzahl + " von " + aufgabenzahl +" Aufgaben sind korrekt (" + anteilrichtigerlsg + "%)");
 
-        //Ausgabe eines vom Prozentsatz abhängigen Motivationsspruchs, Schließen des Scanners
+        //Ausgabe eines vom Prozentsatz abhängigen Motivationsspruchs
         if(anteilrichtigerlsg>99){
             System.out.println("Brilliant gelöst!");
             return;

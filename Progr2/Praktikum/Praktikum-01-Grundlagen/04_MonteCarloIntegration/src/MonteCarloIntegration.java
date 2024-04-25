@@ -4,6 +4,9 @@ public class  MonteCarloIntegration {
 
 
     public static void main(String[] args) {
+        /**
+         * Berechnung der Integrals der angegebenen Funktion in der Klasse function() durch Annäherung
+         */
         //deklaration, initialisieren der benötigten Werte
         int allPoints = 0, pointsUnderCurve = 0, iterations = 1;
         double x, y, changeRationBefore, approxInt = 1;
