@@ -1,6 +1,12 @@
 import java.util.Scanner;
 
 public class Caesar{
+  /**
+   * @author Lukas Preitenwieser
+   * applyCeasar() Codiert und Decodiert Einen übergebenen String mithilfe des Übergebenen Keys
+   *    anhand der Ceasar Chiffre und gibt den veränderten String zurück
+   * printStatistics() analysiert die Häufigkeit jedes vorkommenden Buchstaben in dem Übergebenen String und gibt diese aus
+   */
 
   public final static String ABC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   public final static String EXAMPLE_KEY = "HAMNOGPQFEISTLJVWDXKCYZRBU";
@@ -14,9 +20,10 @@ public class Caesar{
       //check if the key contains the char at the current index from the inputed text
       if(key.contains(String.valueOf(c))){
         int indexOfString = clear.indexOf(String.valueOf(c));
-        encryptedString.append(key.substring(indexOfString, indexOfString+1));  //append the key Character at the index of the Text Character to the encoded String
+        //append the key Character at the index of the Text Character to the encoded String
+        encryptedString.append(key.substring(indexOfString, indexOfString+1));
       }
-      //if the key doesnt contain the sign append it to the output text
+      //if the key doesnt contain the sign, append it to the output text
       else{
         encryptedString.append(String.valueOf(c));
       }
@@ -25,35 +32,43 @@ public class Caesar{
   }
 
 
-  public static void printStatistics(String text){
-    //Relative Häufigkeit: absoluteHäufigkeit/Anzahlallerzeichen
+  private static void printStatistics(String text){
     int stringLength = text.length();
-    String completedLetters = new String();
     //create counter Array with numbers of Char occurance at the position in the alphabet and initialize with 0
-    int[] numberofoccurance = new int[ABC.length()];
+    int[] numberofoccurance = new int[stringLength];
+    StringBuilder completedLetters = new StringBuilder();
+    int countedLetters = 0;
+    //initialize all values with zero
     for(int i=0; i<ABC.length(); i++){
       numberofoccurance[i]=0;
     }
 
     //iterate over all letters in the text
-    for(int i=0; i<stringLength; i++){
+    for(int i=0; i<stringLength; i++) {
       char c = text.charAt(i);
-      //check if char at the index has already been counted
-      if(completedLetters.contains(String.valueOf(c)) || !(ABC.contains(String.valueOf(c)))){
+
+      //if the letter is a whitespace sign skip it
+      if(c == ' ' || c=='\n' || c=='\t'){
         continue;
       }
-      //if the char at the index has not been counted add it to the list and increase occurance counter
+      //if the letter at the index has not been added to the list add it and increase its occurance counter
+      if (completedLetters.indexOf(String.valueOf(c)) == -1 ) {
+        completedLetters.append(String.valueOf(c));
+        ++numberofoccurance[countedLetters];
+        ++countedLetters;
+      }
+      //if the char at the index has been counted increase the numberofoccurance
       else{
-        completedLetters+=(String.valueOf(c));
-        ++numberofoccurance[ABC.indexOf(String.valueOf(c))];
+        ++numberofoccurance[completedLetters.indexOf(String.valueOf(c))];
       }
     }
 
-    //Output of the Occurance message
-    for(int i=0; i<ABC.length(); i++){
-      System.out.println(ABC.substring(i, i+1) +" "+ ((float)numberofoccurance[i]/(float)stringLength) +  " %");
-    }
+    //Output of the Occurance message and convert StringBuilder to String
+    String occuredLetters = completedLetters.toString();
+    for(int i=0; i<countedLetters; i++){
+      System.out.printf("%s:\t%.2f %%\n", occuredLetters.substring(i, i+1), (((double)numberofoccurance[i]/(double)stringLength)*100));
 
+    }
   }
 
   public static void main(String[] args){
