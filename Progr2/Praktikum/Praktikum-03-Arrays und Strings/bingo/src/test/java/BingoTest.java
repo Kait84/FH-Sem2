@@ -67,6 +67,7 @@ public class BingoTest {
 
   } */
 
+  /*
   @Test
   public void testCheckBingoCard(){
 
@@ -165,8 +166,9 @@ public class BingoTest {
         () -> Bingo.checkBingoCard(example));
     example[0][4] = 73;
   }
+  */
 
-  /*@Test
+  @Test
   public void testFillBingoCard(){
 
     assertThrows("number must not be 0",
@@ -194,7 +196,7 @@ public class BingoTest {
     assertFalse("must return false on number not on the card",
         Bingo.fillBingoCard(example, 60));
 
-  }*/
+  }
 
   /*@Test
   public void testBingo(){

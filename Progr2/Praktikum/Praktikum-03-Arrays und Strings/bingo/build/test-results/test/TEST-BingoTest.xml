@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="BingoTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2024-04-26T10:52:17" hostname="DESKTOP-28F0G7I" time="0.014">
+<testsuite name="BingoTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2024-05-07T10:09:16" hostname="DESKTOP-28F0G7I" time="0.02">
   <properties/>
-  <testcase name="testCheckBingoCard" classname="BingoTest" time="0.014">
-    <failure message="java.lang.AssertionError: no rows not allowed: unexpected exception type thrown; expected:&lt;java.lang.IllegalArgumentException&gt; but was:&lt;java.lang.ArrayIndexOutOfBoundsException&gt;" type="java.lang.AssertionError">java.lang.AssertionError: no rows not allowed: unexpected exception type thrown; expected:&lt;java.lang.IllegalArgumentException&gt; but was:&lt;java.lang.ArrayIndexOutOfBoundsException&gt;
-	at org.junit.Assert.assertThrows(Assert.java:1020)
-	at BingoTest.testCheckBingoCard(BingoTest.java:77)
+  <testcase name="testFillBingoCard" classname="BingoTest" time="0.02">
+    <failure message="java.lang.IllegalArgumentException: Die dritte Spalte enthaelt Werte kleiner 31 oder Groesser 45!" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Die dritte Spalte enthaelt Werte kleiner 31 oder Groesser 45!
+	at Bingo.checkBingoCard(Bingo.java:122)
+	at Bingo.fillBingoCard(Bingo.java:150)
+	at BingoTest.testFillBingoCard(BingoTest.java:187)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -49,11 +50,6 @@
 	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
-	at Bingo.checkBingoCard(Bingo.java:61)
-	at BingoTest.lambda$testCheckBingoCard$1(BingoTest.java:79)
-	at org.junit.Assert.assertThrows(Assert.java:1001)
-	... 45 more
 </failure>
   </testcase>
   <system-out><![CDATA[]]></system-out>
