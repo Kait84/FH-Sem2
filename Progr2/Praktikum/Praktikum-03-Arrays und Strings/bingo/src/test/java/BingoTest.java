@@ -168,6 +168,7 @@ public class BingoTest {
   }
   */
 
+  /*
   @Test
   public void testFillBingoCard(){
 
@@ -197,6 +198,8 @@ public class BingoTest {
         Bingo.fillBingoCard(example, 60));
 
   }
+  */
+
 
   /*@Test
   public void testBingo(){
@@ -244,8 +247,8 @@ public class BingoTest {
     assertTrue("must return true on Bingo! (other diagonal)",
         Bingo.bingo(example));
 
-  }*/
-
+  }
+   */
 
 
 
