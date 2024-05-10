@@ -1,12 +1,17 @@
 package dungeonchase;
 
 public class Player extends Character {
+
+    public Player(){
+        super("Player");
+    }
+
     @Override
-    public abstract String getImage(){
-        return "app/src/main/resources/player.png";
+    public String getImage(){
+        return "app/src/main/resources/dungeon-tileset/player.png";
     }
     @Override
-    public abstract Direction update(Direction playerMovement){
-        return Player.playerMovement;
+    public Direction update(Grid grid, int x, int y, Direction playerMovement){
+        return playerMovement;
     }
 }

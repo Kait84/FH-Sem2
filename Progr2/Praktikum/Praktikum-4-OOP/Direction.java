@@ -20,14 +20,20 @@ public enum Direction {
         this.dy = dy;
     }
 
+    //Getter
     public int getDX() {
         return this.dx;
     }
-
     public int getDY() {
         return this.dy;
     }
 
+    /**
+     * Rückgabe der zu dx und dy passenden Richtung
+     * @param dx:
+     * @param dy
+     * @return zu dx und dy passende Richtung
+     */
     public static Direction fromD(int dx, int dy) {
         Direction direction = null;
         for (Direction d : Direction.values()) {
@@ -42,15 +48,23 @@ public enum Direction {
         return direction;
     }
 
+    /**
+     * @return entgegengesetzte Richtung von aufgerufener Richtung
+     */
     public Direction opposite() {
         return fromD(-dx, -dy);
     }
 
+    /**
+     * Zufällige Generierung einer Geografischen Richtung
+     * @return Richtung
+     */
     public static Direction random4() {
         Random r = new Random();
         Direction dir;
-        int rand = r.nextInt(4) + 1;
         //create random int between 1 and 4
+        int rand = r.nextInt(4) + 1;
+        //assign a direction to the integer and return it
         if (rand == 1)
             dir = EAST;
         else if (rand == 2)
