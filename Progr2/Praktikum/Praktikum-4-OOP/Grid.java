@@ -15,6 +15,54 @@ public class Grid {
 
   private int currentIteration;
 
+  public void updatePlayer(Direction playerMovement){
+    boolean bewegung = false;
+    //nur fortfahren, wenn playerMovement != null
+    if(playerMovement.equals(null)){
+      throw new IllegalArgumentException("Player Movement ist NULL!");
+    }
+
+    //aktualisieren des Spielers
+    player.update(this, playerX, playerY, playerMovement);
+    int pX = playerX;
+    int pY = playerY;
+    int dx = playerMovement.getDX();
+    int dy = playerMovement.getDY();
+
+    int zielX = pX + dx;
+    int zielY = pY + dy;
+
+    //TEMPORÄR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    playerX += dx;
+    playerY += dy;
+    return;
+/*
+    //ausführen, wenn:
+    //neue Position innerhalb des Spielfelds
+    if(zielX <= GRID_WIDTH && zielX >= 0 && zielY <= GRID_HEIGHT && zielY >= 0){
+      bewegung = true;
+    }
+    //Zielposition leer ist
+    else if(dx == 0 && dy==0){
+      bewegung = true;
+    }
+    //Zielposition nicht leer ist und von Character Instanz belegt wird
+    else if(dx!=0 && dy!=0 ){  //&& wird von Character Instanz belegt ?????????
+      //if(Character.collisionFrom(player)){
+      //  bewegung = true;
+      //}
+    }
+
+    if(bewegung){
+      playerX = zielX;
+      playerY = zielY;
+    }else{
+      return;
+    }
+    */
+  }
+
+
 
   // private TreasureChest treasureChest; // ### TreasureChest
 
@@ -44,6 +92,7 @@ public class Grid {
     player = new Player();
     grid[playerX][playerY] = player;
 
+
     /* ### TreasureChest 
     treasureChest = new TreasureChest();
     grid[GRID_WIDTH-2][GRID_HEIGHT/2] = treasureChest;
@@ -51,7 +100,7 @@ public class Grid {
 
   }
 
-   // Player
+    // Player
    public Player getPlayer(){
     return player;
   }
@@ -64,6 +113,7 @@ public class Grid {
   public int getPlayerY(){
     return playerY;
   }
+
 
   /* ### TrasureChest
   public TreasureChest getTreasureChest(){

@@ -8,7 +8,7 @@ public class Player extends Character {
 
     @Override
     public String getImage(){
-        return "app/src/main/resources/dungeon-tileset/player.png";
+        return "player.png";
     }
     @Override
     public Direction update(Grid grid, int x, int y, Direction playerMovement){

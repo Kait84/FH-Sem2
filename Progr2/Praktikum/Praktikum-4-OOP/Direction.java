@@ -30,16 +30,19 @@ public enum Direction {
 
     /**
      * Rückgabe der zu dx und dy passenden Richtung
-     * @param dx:
+     * @param dx
      * @param dy
      * @return zu dx und dy passende Richtung
      */
     public static Direction fromD(int dx, int dy) {
         Direction direction = null;
+        forloop:
         for (Direction d : Direction.values()) {
             try {
+                //wenn das dx und dy mit einer Richtung übereinstimmt, gebe sie zurück
                 if (dx == d.dx && dy == d.dy) {
                     direction = d;
+                    break forloop;
                 }
             } catch (IllegalArgumentException IAE) {
                 System.out.println("Angabe eines falschen Parameters!");

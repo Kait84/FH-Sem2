@@ -85,7 +85,7 @@ public class DungeonChaseMain extends Application {
 
       receiveInput = false;
 
-      /* ### updatePlayer 
+      // updatePlayer
       Direction movement = 
         switch (keyEvent.getCode()){
           case W, UP -> Direction.NORTH;
@@ -99,7 +99,7 @@ public class DungeonChaseMain extends Application {
       if (movement == Direction.NONE)
         return;
 
-      grid.updatePlayer(movement);*/
+      grid.updatePlayer(movement);
       drawGrid();
 
       timer.schedule(
