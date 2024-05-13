@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
+/**
+ * @author Lukas Preitenwieser
+ * applyCeasar() Codiert und Decodiert Einen übergebenen String mithilfe des Übergebenen Keys
+ *    anhand der Ceasar Chiffre und gibt den veränderten String zurück
+ * printStatistics() analysiert die Häufigkeit jedes vorkommenden Buchstaben in dem Übergebenen String und gibt diese aus
+ */
 public class Caesar{
-  /**
-   * @author Lukas Preitenwieser
-   * applyCeasar() Codiert und Decodiert Einen übergebenen String mithilfe des Übergebenen Keys
-   *    anhand der Ceasar Chiffre und gibt den veränderten String zurück
-   * printStatistics() analysiert die Häufigkeit jedes vorkommenden Buchstaben in dem Übergebenen String und gibt diese aus
-   */
 
   public final static String ABC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   public final static String EXAMPLE_KEY = "HAMNOGPQFEISTLJVWDXKCYZRBU";
@@ -17,10 +17,10 @@ public class Caesar{
     for(int i=0; i<text.length(); i++){
       char c = text.charAt(i);
 
-      //check if the key contains the char at the current index from the inputed text
+      //if the key contains the char at the current index from the inputed text,
+      //append the char at the index of the Textchar to the encoded String
       if(key.contains(String.valueOf(c))){
         int indexOfString = clear.indexOf(String.valueOf(c));
-        //append the key Character at the index of the Text Character to the encoded String
         encryptedString.append(key.substring(indexOfString, indexOfString+1));
       }
       //if the key doesnt contain the sign, append it to the output text

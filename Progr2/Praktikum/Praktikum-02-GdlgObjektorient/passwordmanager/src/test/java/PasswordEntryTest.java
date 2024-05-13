@@ -75,7 +75,7 @@ public class PasswordEntryTest{
 
   }*/
 
-  /*@Test
+  @Test
   public void testEquals(){
 
     PasswordEntry entry = new PasswordEntry("reddit.com", "lurker123", PasswordComplexity.MEDIUM);
@@ -101,6 +101,6 @@ public class PasswordEntryTest{
     assertTrue("equal must return true for equal entries",
         entry.equals(new PasswordEntry("reddit.com", "lurker123", PasswordComplexity.MEDIUM)));
 
-  }*/
+  }
 
 }
