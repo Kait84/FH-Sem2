@@ -4,7 +4,8 @@ import static org.junit.Assert.*;
 
 public class PasswordStoreTest{
 
-  /*private PasswordEntry e1;
+    /*
+  private PasswordEntry e1;
   private PasswordEntry e2;
   private PasswordEntry e3;
 
@@ -22,7 +23,8 @@ public class PasswordStoreTest{
     assertEquals("empty password store has size 0", 0, store.getSize());
     assertEquals("empty password store has no first entry", null, store.getFirstEntry());
 
-  }*/
+  }
+     */
 
   /*@Test
   public void testContains(){

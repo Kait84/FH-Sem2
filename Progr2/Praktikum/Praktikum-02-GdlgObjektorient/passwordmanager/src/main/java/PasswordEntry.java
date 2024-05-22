@@ -4,7 +4,8 @@
  */
 public class PasswordEntry{
 
-    private final String website, loginName;
+    private final String website;
+    private final String loginName;
     private final PasswordComplexity passwordComplexity;
     private String password;
     private PasswordEntry nextEntry;
@@ -99,7 +100,7 @@ public class PasswordEntry{
      */
     @Override
     public String toString(){
-        return String.format("%s L:%s P:%s (%s)", website, loginName, password, passwordComplexity);
+        return String.format("%s. L:%s P:%s (%s)", website, loginName, password, passwordComplexity);
     }
 
 }
