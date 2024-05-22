@@ -12,22 +12,21 @@ public class PasswordEntry{
 
     //Konstruktoren
     public PasswordEntry(String website, String loginName, PasswordComplexity passwordComplexity){
-        if(website.equals(null)){
-            throw new IllegalArgumentException("website ist null");
-        }else if(website.isEmpty()){
-            throw new IllegalArgumentException("website ist leer");
-        }else{
+
+        try{
             this.website = website;
+        }catch(NullPointerException npe) {
+            throw new IllegalArgumentException("website darf nicht null sein!");
         }
 
-        if(!passwordComplexity.equals(null)){
+        try{
             this.passwordComplexity = passwordComplexity;
-        }else{
-            throw new IllegalArgumentException("passwordComplexity ist null");
+        }catch(NullPointerException npe) {
+            throw new IllegalArgumentException("PasswordComplexity darf nicht null sein!");
         }
 
         this.loginName = loginName;
-        this.password = passwordComplexity.generatePassword();
+        regeneratePassword();
         this.nextEntry = null;
     }
 
@@ -100,7 +99,7 @@ public class PasswordEntry{
      */
     @Override
     public String toString(){
-        return String.format("%s. L:%s P:%s (%s)", website, loginName, password, passwordComplexity);
+        return String.format("%s L:%s P:%s (%s)", website, loginName, password, passwordComplexity);
     }
 
 }

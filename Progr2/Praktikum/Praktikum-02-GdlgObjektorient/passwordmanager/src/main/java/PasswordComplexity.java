@@ -6,6 +6,7 @@ import java.util.Random;
  */
 public enum PasswordComplexity {
 
+    //Enum-Werte mit zugehöriger length und ziffern der erlaubten Zeichen
     PIN(4, "0"),
     SIMPLE(5, "aA"),
     MEDIUM(8, "aA0"),
@@ -15,9 +16,14 @@ public enum PasswordComplexity {
     private int length;
     private String chars, usableChars;
 
+    /**
+     *Konstrukter, der die Passwortlänge und usableChars initialisert
+     * @param length - Passwortlänge
+     * @param chars - beinhaltet Ordinals, die für erlaubte Zeichen stehen, woraus usableChars generiert wird
+     */
     private PasswordComplexity(int length, String chars) {
         StringBuilder charsbuilder = new StringBuilder();
-
+        //Überprüfung auf Gültigkeit
         try {
             this.length = length;
         } catch (IllegalArgumentException IAE) {
@@ -29,9 +35,9 @@ public enum PasswordComplexity {
             System.err.println("chars ist von keinem gültigem Typ");
         }
 
-        //Erstellen der Benutzbaren Zeichenkette mit den Werten von chars
-        for(int i = 0; i<chars.length();i++) {
-            switch (chars.indexOf(i)) {
+        //Erstellen der Benutzbaren Zeichenkette abhängig von den Werten des chars Strings
+        for(char c : chars.toCharArray()) {
+            switch (c) {
                 case '0':
                     charsbuilder.append("0123456789");
                     break;
@@ -66,9 +72,11 @@ public enum PasswordComplexity {
         final Random rndm = new Random();
         final StringBuilder password = new StringBuilder();
 
-        //Anhängen eines zufälligen Charachters von den usable chars an das passwort, bis passwordlänge erreicht
+        //Anhängen eines zufälligen Charachters von den usable chars an das passwort, bis Passwortlänge erreicht ist
         for (int i = 0; i < this.length; i++) {
-            password.append(this.usableChars.charAt(rndm.nextInt(0, this.usableChars.length() - 1)));
+            int randomInt = rndm.nextInt(0, this.usableChars.length()-1);
+            char randomChar = this.usableChars.charAt(randomInt);
+            password.append(randomChar);
         }
         return (password.toString());
     }

@@ -1,4 +1,3 @@
-import PasswordEntry;
 import java.util.ArrayList;
 
 public class PasswordStore {
@@ -6,13 +5,12 @@ public class PasswordStore {
     private int size;
     private PasswordEntry firstEntry;
 
-    private ArrayList<PasswordEntry> Store;
+    private ArrayList<PasswordEntry> Store = new ArrayList<PasswordEntry>(size);
 
     //Konstruktor
     public PasswordStore() {
         this.size = 0;
         this.firstEntry = null;
-        Store = new ArayList<PasswordEntry>(size);
     }
 
     //Getter, Setter methoden
@@ -85,7 +83,7 @@ public class PasswordStore {
         try {
             if (!Store.contains(entry) && entry instanceof PasswordEntry) {
                 Store.add(0, entry);
-                size++;
+                this.size++;
                 addingSuccessfull = true;
             }
             return addingSuccessfull;
@@ -98,21 +96,32 @@ public class PasswordStore {
      * Ausgabe aller Enträge
      */
     public void printPasswordStore() {
+        int ind = 0;
         for (PasswordEntry pe : Store) {
-            String[] currentEntry = pe.toString().split(" ");
-            System.out.println((String)currentEntry[0] + (String)currentEntry[1] + (String)currentEntry[2]);
+            System.out.printf("%d. %s \n", ind, pe.toString());
+            ind++;
         }
     }
 
     public void printPasswordStore(String website) {
-
+        try{
+            int ind = 0;
+            for (PasswordEntry pe : Store) {
+                String[] currentline = pe.toString().split(" ");
+                if(website.equals(currentline[1])){
+                    System.out.printf("%d. %s\n", ind, pe.toString());
+                }
+            }
+        }catch(NullPointerException e){
+            throw new IllegalArgumentException("Der uebergebene Parameter darf nicht null sein");
+        }
     }
 
     public PasswordEntry get(int index) {
-
-    }
-
-    public void remove(int index) {
-
+        if(index < this.size && index >= 0){
+            return Store.get(index);
+        }else{
+            throw new IllegalArgumentException("Der angegebe Index ist ungueltig!");
+        }
     }
 }
