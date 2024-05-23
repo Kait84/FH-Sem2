@@ -1,6 +1,9 @@
+/**
+ * @author Lukas Preitenwieser
+ * Berechnen der Volumina der Körper Kugel, Pyramide, Quader abhängig der eingegebenen
+ */
 public class Flaechenberechner {
     /**
-     * @author Lukas Preitenwieser
      * Berechnen der Volumina der Körper Kugel, Pyramide, Quader abhängig der eingegebenen
      * @param args als Maße der zu berechnenden Formen
      */
@@ -14,8 +17,8 @@ public class Flaechenberechner {
                 //Auslesen der Parameter, ausrechnen und zurückgeben des Kugelvolumens
                 try{
                     double radius = Double.parseDouble(args[0]);
-                    System.out.printf("Kugelvolumen: %.6f", (4 / 3 * Math.PI * radius * radius * radius));
-                }catch(Exception nad){
+                    System.out.printf("Kugelvolumen: %.6f", ((4 / 3) * Math.PI * radius * radius * radius));
+                }catch(IllegalArgumentException e){
                     System.err.println("Ein angegebenes Argument ist von einem ungültigen Typen");
                 }
                 break;
@@ -26,7 +29,7 @@ public class Flaechenberechner {
                     double hoehe = Double.parseDouble(args[1]);
                     double volumen = grundseite*grundseite*hoehe*(1/3d);
                     System.out.println("Pyramidenvolumen: " + volumen);
-                }catch(Exception nad){
+                }catch(IllegalArgumentException nad){
                     System.err.println("Ein angegebenes Argument ist von einem ungültigen Typen");
                 }
                 break;
@@ -37,7 +40,7 @@ public class Flaechenberechner {
                     double breite = Double.parseDouble(args[1]);
                     double hoehe = Double.parseDouble(args[2]);
                     System.out.println("Quadervolumen: " + (laenge*breite*hoehe));
-                }catch(Exception nad){
+                }catch(IllegalArgumentException nad){
                     System.err.println("Ein angegebenes Argument ist von einem ungültigen Typen");
                 }
                 break;

@@ -2,9 +2,12 @@ import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * @author Lukas Preitenwieser
+ * Mainklasse, die für das Ausführen des Programms zuständig ist
+ */
 public class Main {
     /**
-     * @author Lukas Preitenwieser
      * @param args
      * Abfrage des kleinen Ein Mal Eins mit Prozentsatz der gelösten aufgaben und einem Motivationsspruch,
      * der abhängig davon ist.
@@ -22,6 +25,9 @@ public class Main {
         do{
             try{
                 aufgabenzahl = scan.nextInt();
+                if(aufgabenzahl<0){
+                    throw new InputMismatchException("Bitte geben sie eine positive Ganzzahl ein!");
+                }
                 correctinput = true;
             } catch(InputMismatchException IME){
                 System.out.println("Bitte geben sie eine positive Ganzzahl ein!");
@@ -43,6 +49,9 @@ public class Main {
                 try{
                     System.out.println("Was ist " + x + " * " + y + "?");
                     erg = scan.nextInt();
+                    if(erg < 0){
+                        throw new InputMismatchException("Bitte geben sie eine positive Ganzzahl ein!");
+                    }
                     correctinput = true;
                 }catch(InputMismatchException IME){
                     System.out.println("Bitte geben sie eine positive Ganzzahl ein!");
