@@ -11,6 +11,14 @@ public class Caesar{
   public final static String ABC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   public final static String EXAMPLE_KEY = "HAMNOGPQFEISTLJVWDXKCYZRBU";
 
+
+  /**
+   * Anwendung der Ceasar Chiffre zum Codieren des Textes mit dem Schlüssel über den angegeben Ziffern in clear
+   * @param text - Der zu ver- oder entschlüsselnde Text
+   * @param key - Schlüssel, mit dem verschlüsselt werden soll
+   * @param clear - alle Ziffern die im Zeichensatz enthalten sein sollen
+   * @return Ceasar-codierten String
+   */
   public static String applyCaesar(String text, String key, String clear){
     StringBuilder encryptedString = new StringBuilder(text.length());
     //iterate over the inputed text
@@ -32,6 +40,10 @@ public class Caesar{
   }
 
 
+  /**
+   * Ausgabe der Häufigkeit der Vorkommen der Buchstaben im übergebenen Text in Prozent
+   * @param text - Text auf dem die Häufigkeitsanalyse ausgeführt werden soll
+   */
   private static void printStatistics(String text){
     int stringLength = text.length();
     //create counter Array with numbers of Char occurance at the position in the alphabet and initialize with 0
@@ -71,6 +83,10 @@ public class Caesar{
     }
   }
 
+  /**
+   * Mainfunktion, in der alle Funktionen aufgerufen werden und die Nachricht Cheasar-Kodiert und dekodiert ausgegeben wird
+   * @param args - nicht genutzt
+   */
   public static void main(String[] args){
     String message = "PROGRAMMIEREN IN JAVA MACHT NOCH MEHR SPASS ALS IN PYTHON ODER C";
 
