@@ -9,7 +9,7 @@ import org.junit.*;
 public class BingoTest {
 
 
-/*
+  ///////Passed
   @Test
   public void testBingoExample(){
     assertNotNull("BINGO_EXAMPLE must not be null", Bingo.BINGO_EXAMPLE);
@@ -46,9 +46,10 @@ public class BingoTest {
     assertEquals("expected 48 at Bingo.BINGO_EXAMPLE[4][3]", 48, Bingo.BINGO_EXAMPLE[4][3]);
     assertEquals("expected 67 at Bingo.BINGO_EXAMPLE[4][4]", 67, Bingo.BINGO_EXAMPLE[4][4]);
 
-  } */
+  }
 
-  /*
+
+  ///////Passed
   @Test
   public void testContainsDuplicates(){
 
@@ -65,9 +66,10 @@ public class BingoTest {
         Bingo.containsDuplicates(example));
 
 
-  } */
+  }
 
-  /*
+
+  ///////Passed
   @Test
   public void testCheckBingoCard(){
 
@@ -166,9 +168,8 @@ public class BingoTest {
         () -> Bingo.checkBingoCard(example));
     example[0][4] = 73;
   }
-  */
 
-  /*
+  ///////Passed
   @Test
   public void testFillBingoCard(){
 
@@ -198,10 +199,10 @@ public class BingoTest {
         Bingo.fillBingoCard(example, 60));
 
   }
-  */
 
 
-  /*@Test
+  ///////Passed
+  @Test
   public void testBingo(){
 
     assertFalse("must return false on no Bingo!",
@@ -248,7 +249,6 @@ public class BingoTest {
         Bingo.bingo(example));
 
   }
-   */
 
 
 

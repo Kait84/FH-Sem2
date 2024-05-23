@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="BingoTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-05-10T21:52:20" hostname="DESKTOP-28F0G7I" time="0.012">
+<testsuite name="BingoTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-05-23T15:41:23" hostname="DESKTOP-28F0G7I" time="0.047">
   <properties/>
-  <testcase name="testFillBingoCard" classname="BingoTest" time="0.012"/>
+  <testcase name="testBingo" classname="BingoTest" time="0.01"/>
+  <testcase name="testFillBingoCard" classname="BingoTest" time="0.006"/>
+  <testcase name="testCheckBingoCard" classname="BingoTest" time="0.028"/>
+  <testcase name="testContainsDuplicates" classname="BingoTest" time="0.001"/>
+  <testcase name="testBingoExample" classname="BingoTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
