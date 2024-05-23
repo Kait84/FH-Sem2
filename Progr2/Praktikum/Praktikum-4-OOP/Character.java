@@ -45,7 +45,7 @@ public abstract class Character{
 
     /**
      * aktualisiert den Zustand des Characters, gibt die Richtung, in die sich Character bewegt zurück
-     * @param grid auf dem sich Char bewegt
+     * @param grid auf dem sich Char befindet
      * @param x - Position von Char
      * @param y - Position von Char
      * @param playerMovement - aktuelle Bewegungsrichtung von Char

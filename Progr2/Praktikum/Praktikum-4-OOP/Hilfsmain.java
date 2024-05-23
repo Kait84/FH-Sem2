@@ -5,5 +5,5 @@ public class Hilfsmain {
         System.out.println(Direction.random4());
     }
 
-    //Aktueller Stand: Klasse Player
+    //Aktueller Stand: Klasse Grid: Held lernt laufen
 }
